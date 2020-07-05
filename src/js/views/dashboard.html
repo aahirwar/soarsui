@@ -1,0 +1,45 @@
+<!--
+ Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <div id="containerDiv">
+    <div class="oj-panel oj-flex-items-pad oj-flex-item oj-sm-flex-initial" id="div-530676481-1">
+      <div class="oj-sm-flex-wrap-nowrap oj-flex">
+        
+    
+          <oj-button id="oj-button-530676481-2" display="icons" chroming="outlined" on-oj-action="[[push]]">Button
+            <span class="vb-icon vb-icon-plus" id="span-530676481-2" slot="startIcon">+</span>
+          </oj-button>
+      </div>
+      <div id="container">
+        <oj-data-grid id="datagrid"
+        style="width:100%;max-width:739px;height:400px;"
+        class="oj-sm-margin-1x-bottom"
+        aria-label="Data Grid Cell Based Grid Demo"
+        data="[[dataSource]]"
+        header.column.style='width:180px'
+        cell.renderer="[[getCellTemplate]]"
+        on-oj-before-edit-end="[[handleEditEnd]]"
+        edit-mode="cellNavigation">
+    </oj-data-grid>
+    <oj-button on-oj-action="[[push]]">Add To End</oj-button>
+    <oj-button on-oj-action="[[pop]]">Remove From End</oj-button>
+    <oj-button on-oj-action="[[unshift]]">Add To Beginning</oj-button>
+    <oj-button on-oj-action="[[shift]]">Remove From Beginning</oj-button>
+    
+    <script type="text/html" id="cellTemplate">
+        <span><oj-bind-text value="[[$context.cell.data]]"></span>
+    </script>
+    
+    <script type="text/html" id="editCellTemplate">
+        <oj-input-text id="inputtext" value="{{$context.cell.data}}"></oj-input-text>
+    </script>
+    </div>
+  </div>
+
+
+    </div>
+    
+</div>

@@ -1,0 +1,29 @@
+<!--
+ Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Incidents Content Area</h1>
+  <div>
+     
+    <oj-select-single id="select1" style="max-width:20em" data="[[browsersDP]]" value="{{selectVal}}">   </oj-select-single>
+    <br />
+    <br />
+  </div>
+  <div>
+    <div id='chart-container'>
+      <oj-chart id="pieChart" type="[[selectVal]]" data="[[dataProvider]]" animation-on-display="auto"
+        animation-on-data-change="auto" hover-behavior="dim">
+
+        <template slot='itemTemplate' data-oj-as='item'>
+          <oj-chart-item value='[[item.data.value]]' group-id='[[ [item.data.group] ]]'
+            series-id='[[item.data.series]]'>
+          </oj-chart-item>
+        </template>
+      </oj-chart>
+
+    </div>
+  </div>
+  </div>
+</div>
